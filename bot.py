@@ -1,19 +1,13 @@
-
-# bot.py
 import time
+import datetime
 
-def check_messages():
-    # Placeholder for Instagram API later
-    print("Checking for new messages...")
+def log(msg):
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{now}  {msg}", flush=True)  # flush so logs show up immediately
 
-def send_message(user_id, text):
-    # Placeholder for sending message
-    print(f"Would send to {user_id}: {text}")
-
-# Main loop
 if __name__ == "__main__":
+    log("Booted SocialHub worker.")
     while True:
-        check_messages()
-        # Example: auto-response simulation
-        send_message("demo_user", "Hey! Thanks for reaching out.")
-        time.sleep(60)  # wait 60 seconds before repeating
+        log("Heartbeat: worker is alive.")
+        time.sleep(10)
+
